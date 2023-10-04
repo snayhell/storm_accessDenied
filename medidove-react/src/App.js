@@ -21,7 +21,7 @@ import DoctorDetails from './pages/Doctors/DoctorDetails/DoctorDetails';
 import DoctorsOne from './pages/Doctors/DoctorsOne/DoctorsOne';
 
 import Home from './pages/Home/Home/Home';
-
+import Dashboard1 from './pages/dash/App';
 import Login from './pages/Login/Login';
 import PortfolioSlider from './pages/PortfolioSlider/PortfolioSlider';
 import PortfolioThreeCol from './pages/PortfolioThreeCol/PortfolioThreeCol';
@@ -54,6 +54,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<ServicesOne />} />
+
+            <Route exact path="/profile" element={<Dashboard1 />} />
             {/* <Route path='/tutorials' element={<Tutorials />} /> */}
             {/* <Route path="/servicesTwo" element={<ServicesTwo />} /> */}
             <Route path="/servicesDetails" element={<ServicesDetails />} />
