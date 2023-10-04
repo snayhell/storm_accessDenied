@@ -70,6 +70,9 @@ const HomeHeader = () => {
                                  <li><Link to="/services">Department </Link>
                                     
                                  </li>
+                                 <li><Link to="/map">Map </Link>
+                                    
+                                 </li>
                                  <li><Link to="/doctors">Doctors</Link>
                                   
                                  </li>
