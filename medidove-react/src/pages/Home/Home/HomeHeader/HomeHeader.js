@@ -51,15 +51,6 @@ const HomeHeader = () => {
                                  <li><a href="#">AU</a></li>
                               </ul>
                            </div>
-                           <div className="header-social-icons f-right d-none d-xl-block">
-                              <ul>
-                                 <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-youtube"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-pinterest"></i></a></li>
-                              </ul>
-                           </div>
                         </div>
                         <div className="header__menu f-right">
                            <nav id="mobile-menu">
@@ -100,6 +91,9 @@ const HomeHeader = () => {
                                        <li><Link to="/contact">Contact</Link></li>
                                        <li><Link to="/notMatch">404 page</Link></li>
                                     </ul>
+                                 </li>
+                                 <li><Link to="/profile">Profile</Link>
+                                  
                                  </li>
                               </ul>
                            </nav>
