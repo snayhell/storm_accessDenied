@@ -38,66 +38,50 @@ const HomeHeader = () => {
                         </div>
                      </div>
                      <div className="col-xl-9 col-lg-9 col-md-6 col-6">
-                        <div className="header-right f-right">
-                           <div className="header-lang f-right pos-rel d-none d-lg-block">
-                              <div className="lang-icon">
-                                 <img src="img/icon/lang.png" alt=""/>
-                                    <span>EN<i className="fas fa-angle-down"></i></span>
-                              </div>
-                              <ul className="header-lang-list">
-                                 <li><a href="#">USA</a></li>
-                                 <li><a href="#">UK</a></li>
-                                 <li><a href="#">CA</a></li>
-                                 <li><a href="#">AU</a></li>
-                              </ul>
-                           </div>
-                           <div className="header-social-icons f-right d-none d-xl-block">
-                              <ul>
-                                 <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-youtube"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-linkedin"></i></a></li>
-                                 <li><a href="#"><i className="fab fa-pinterest"></i></a></li>
-                              </ul>
-                           </div>
-                        </div>
+                       
                         <div className="header__menu f-right">
                            <nav id="mobile-menu">
                               <ul>
                                  <li><Link to="/">Home </Link>
                                  
                                  </li>
-                                 <li><Link to="/services">Department </Link>
+                                 <li><Link to="/education">Education </Link>
+                                 <ul className="submenu">
+                                       <li><Link to="/physical">Physical Recovery</Link></li>
+                                       <li><Link to="/emotional">Emotional Well-Being</Link></li>
+                                       <li><Link to="/breastfeed">Breastfeeding & Infant Care</Link></li>
+                                       <li><Link to="/mental">Mental Health Resources</Link></li>
+                                    </ul>
+                                 </li>
+                                 <li><Link to="/healthCare">Health </Link>
+                                    
+                                 </li>
+                               
+                                 <li><Link to="/map">Map </Link>
                                     
                                  </li>
                                  <li><Link to="/doctors">Doctors</Link>
                                   
                                  </li>
                                  <li><Link to="/shop">Shop</Link>
-                                    <ul className="submenu">
-                                       <li><Link to="/shop">Shop Page</Link></li>
-                                       <li><Link to="/shopDetails">Shop Details</Link></li>
-                                       <li><Link to="/shoppingCart">Shopping Cart</Link></li>
-                                       <li><Link to="/checkout">Checkout</Link></li>
-                                       <li><Link to="/wishList">Wishlist</Link></li>
-                                       <li><Link to="/login">Login</Link></li>
-                                       <li><Link to="/register">Register</Link></li>
-                                    </ul>
+                                    
                                  </li>
                                  <li><a href="http://localhost:3001/">Yoga</a>
                                    
                                  </li>
-                                 <li><a href="#">Pages </a>
-                                    <ul className="submenu">
-                                       <li><Link to="/about">About</Link></li>
-                                       <li><Link to="/appoinment">Appoinment</Link></li>
-                                       <li><Link to="/portfolioTwoColumn">Portfolio 2 column</Link></li>
-                                       <li><Link to="/portfolioThreeColumn">Portfolio 3 column</Link></li>
-                                       <li><Link to="/portfolioSlider">Portfolio Slider</Link></li>
-                                       <li><Link to="/contact">Contact</Link></li>
-                                       <li><Link to="/notMatch">404 page</Link></li>
-                                    </ul>
+                                 <li><Link to="/profilr">Dashboard</Link>
+                                  
                                  </li>
+                                 <li><Link to="/Help">Help Center</Link>
+                                 <ul className="submenu">
+                                       <li><Link to="/scheme">Schemes</Link></li>
+                                       <li><Link to="/vaccine">Vaccines</Link></li>
+                                       <li><Link to="/remedy">Remedy AI</Link></li>
+                                    </ul>
+                                    </li>
+                                    <li><Link to="/login">Login</Link>
+                                    
+                                    </li>
                               </ul>
                            </nav>
                         </div>

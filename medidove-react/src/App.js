@@ -37,6 +37,8 @@ import WishList from './pages/wishList/WishList';
 
 import './App.css';
 import NotFound from './pages/NotFound/NotFound';
+import Map from './pages/Map';
+import Profile from './pages/Profile';
 // import Tutorials from './pages/Yoga/pages/Tutorials/Tutorials';
 // import Yoga1 from './pages/Yoga/Yoga1';
 // import Yoga from './pages/Yoga/pages/Yoga/Yoga';
@@ -51,11 +53,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            {/* <Route path='/start' element={<Yoga />} /> */}
-            {/* <Route path="/homeTwo" element={<HomeTwo />} />
-            <Route path="/homeThree" element={<HomeThree />} />
-            <Route path="/homeFour" element={<HomeFour />} />
-            <Route path="/homeFive" element={<HomeFive />} /> */}
             <Route path="/services" element={<ServicesOne />} />
             {/* <Route path='/tutorials' element={<Tutorials />} /> */}
             {/* <Route path="/servicesTwo" element={<ServicesTwo />} /> */}
@@ -90,6 +87,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/notMatch" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>
       </AllContext>
