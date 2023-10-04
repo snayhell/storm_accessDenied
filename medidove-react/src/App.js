@@ -19,6 +19,7 @@ import DetailsLeftSideBar from './pages/DetailsLeftSideBar/DetailsLeftSideBar';
 import DetailsVideo from './pages/DetailsVideo/DetailsVideo';
 import DoctorDetails from './pages/Doctors/DoctorDetails/DoctorDetails';
 import DoctorsOne from './pages/Doctors/DoctorsOne/DoctorsOne';
+import { useContext,createContext, useEffect,useState } from 'react';
 
 import Home from './pages/Home/Home/Home';
 import Dashboard1 from './pages/dash/App';
@@ -39,14 +40,42 @@ import './App.css';
 import NotFound from './pages/NotFound/NotFound';
 import Map from './pages/Map';
 import Profile from './pages/Profile';
+import Vaccine from './pages/Vaccine';
 // import Tutorials from './pages/Yoga/pages/Tutorials/Tutorials';
 // import Yoga1 from './pages/Yoga/Yoga1';
 // import Yoga from './pages/Yoga/pages/Yoga/Yoga';
+import Physical from './pages/Education/Physical';
+import Remedy from './pages/Remedy';
 
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+export const UserContext = createContext(null);
 
 function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const db = getFirestore();
+    const userDocRef = doc(db, "health-record", "wXTMtAspmNNz8dfqiMle");
+    
+    try {
+      const getUserData = async () => {
+        const userDocSnapshot = await getDoc(userDocRef);
+        if (userDocSnapshot.exists()) {
+          setUser(userDocSnapshot.data());
+          console.log(userDocSnapshot.data());
+        } else {
+          console.error("User data not found in Firestore");
+        }
+      };
+  
+      getUserData();
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }, []);
+  
   return (
     <>
+      <UserContext.Provider value={{user,setUser}}>
       <AllContext>
         <BrowserRouter>
           <ScrollTop />
@@ -57,6 +86,8 @@ function App() {
 
             <Route exact path="/profile" element={<Dashboard1 />} />
             {/* <Route path='/tutorials' element={<Tutorials />} /> */}
+            <Route path='/education' element={<Physical/>} />
+
             {/* <Route path="/servicesTwo" element={<ServicesTwo />} /> */}
             <Route path="/servicesDetails" element={<ServicesDetails />} />
             <Route path="/doctors" element={<DoctorsOne />} />
@@ -67,7 +98,7 @@ function App() {
             <Route path="/shoppingCart" element={<ShoppingCart />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/wishList" element={<WishList />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register />} />
             {/* <Route path="/yoga" element={<Yoga1/>} /> */}
             <Route path="/blogLeftSideBar" element={<BlogLeftSideBar />} />
@@ -91,9 +122,12 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/map" element={<Map />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/vaccine" element={<Vaccine />} />
+            <Route path="/remedy" element={<Remedy />} />
           </Routes>
         </BrowserRouter>
       </AllContext>
+      </UserContext.Provider>
     </>
   );
 }

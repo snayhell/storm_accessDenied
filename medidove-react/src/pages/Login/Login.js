@@ -8,7 +8,6 @@ const Login = () => {
     return (
         <>
            <HomeHeader/>
-           <CommonPageHeader title="Login Page" subtitle="Login" />
            <LoginArea/>
            <Footer/>
         </>

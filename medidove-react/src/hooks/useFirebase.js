@@ -1,11 +1,11 @@
-import firebaseInitialization from "../components/Firebase/Firebase.init";
+import app from "../components/Firebase/Firebase.config.js";
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword,
 sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
 import { useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 
 
-firebaseInitialization()
+app();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
