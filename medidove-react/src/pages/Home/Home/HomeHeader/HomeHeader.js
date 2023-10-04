@@ -46,7 +46,12 @@ const HomeHeader = () => {
                                  
                                  </li>
                                  <li><Link to="/education">Education </Link>
-                                    
+                                 <ul className="submenu">
+                                       <li><Link to="/physical">Physical Recovery</Link></li>
+                                       <li><Link to="/emotional">Emotional Well-Being</Link></li>
+                                       <li><Link to="/breastfeed">Breastfeeding & Infant Care</Link></li>
+                                       <li><Link to="/mental">Mental Health Resources</Link></li>
+                                    </ul>
                                  </li>
                                  <li><Link to="/healthCare">Health </Link>
                                     
@@ -59,42 +64,19 @@ const HomeHeader = () => {
                                   
                                  </li>
                                  <li><Link to="/shop">Shop</Link>
-                                    <ul className="submenu">
-                                       <li><Link to="/shop">Shop Page</Link></li>
-                                       <li><Link to="/shopDetails">Shop Details</Link></li>
-                                       <li><Link to="/shoppingCart">Shopping Cart</Link></li>
-                                       <li><Link to="/checkout">Checkout</Link></li>
-                                       <li><Link to="/wishList">Wishlist</Link></li>
-                                       <li><Link to="/login">Login</Link></li>
-                                       <li><Link to="/register">Register</Link></li>
-                                    </ul>
+                                    
                                  </li>
                                  <li><a href="http://localhost:3001/">Yoga</a>
                                    
-                                 </li>
-                                 <li><a href="#">Pages </a>
-                                    <ul className="submenu">
-                                       <li><Link to="/about">About</Link></li>
-                                       <li><Link to="/appoinment">Appoinment</Link></li>
-                                       <li><Link to="/portfolioTwoColumn">Portfolio 2 column</Link></li>
-                                       <li><Link to="/portfolioThreeColumn">Portfolio 3 column</Link></li>
-                                       <li><Link to="/portfolioSlider">Portfolio Slider</Link></li>
-                                       <li><Link to="/contact">Contact</Link></li>
-                                       <li><Link to="/notMatch">404 page</Link></li>
-                                    </ul>
                                  </li>
                                  <li><Link to="/profilr">Dashboard</Link>
                                   
                                  </li>
                                  <li><Link to="/Help">Help Center</Link>
                                  <ul className="submenu">
-                                       <li><Link to="/shop">Shop Page</Link></li>
-                                       <li><Link to="/shopDetails">Shop Details</Link></li>
-                                       <li><Link to="/shoppingCart">Shopping Cart</Link></li>
-                                       <li><Link to="/checkout">Checkout</Link></li>
-                                       <li><Link to="/wishList">Wishlist</Link></li>
-                                       <li><Link to="/login">Login</Link></li>
-                                       <li><Link to="/register">Register</Link></li>
+                                       <li><Link to="/scheme">Schemes</Link></li>
+                                       <li><Link to="/vaccine">Vaccines</Link></li>
+                                       <li><Link to="/remedy">Remedy AI</Link></li>
                                     </ul>
                                     </li>
                                     <li><Link to="/login">Login</Link>
