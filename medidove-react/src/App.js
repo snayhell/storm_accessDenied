@@ -19,10 +19,10 @@ import DetailsLeftSideBar from './pages/DetailsLeftSideBar/DetailsLeftSideBar';
 import DetailsVideo from './pages/DetailsVideo/DetailsVideo';
 import DoctorDetails from './pages/Doctors/DoctorDetails/DoctorDetails';
 import DoctorsOne from './pages/Doctors/DoctorsOne/DoctorsOne';
-import { useContext,createContext } from 'react';
+import { useContext,createContext, useEffect,useState } from 'react';
 
 import Home from './pages/Home/Home/Home';
-
+import Dashboard1 from './pages/dash/App';
 import Login from './pages/Login/Login';
 import PortfolioSlider from './pages/PortfolioSlider/PortfolioSlider';
 import PortfolioThreeCol from './pages/PortfolioThreeCol/PortfolioThreeCol';
@@ -47,9 +47,35 @@ import Vaccine from './pages/Vaccine';
 import Physical from './pages/Education/Physical';
 import Remedy from './pages/Remedy';
 
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+export const UserContext = createContext(null);
+
 function App() {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const db = getFirestore();
+    const userDocRef = doc(db, "health-record", "wXTMtAspmNNz8dfqiMle");
+    
+    try {
+      const getUserData = async () => {
+        const userDocSnapshot = await getDoc(userDocRef);
+        if (userDocSnapshot.exists()) {
+          setUser(userDocSnapshot.data());
+          console.log(userDocSnapshot.data());
+        } else {
+          console.error("User data not found in Firestore");
+        }
+      };
+  
+      getUserData();
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }, []);
+  
   return (
     <>
+      <UserContext.Provider value={{user,setUser}}>
       <AllContext>
         <BrowserRouter>
           <ScrollTop />
@@ -57,6 +83,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<ServicesOne />} />
+
+            <Route exact path="/profile" element={<Dashboard1 />} />
+            {/* <Route path='/tutorials' element={<Tutorials />} /> */}
             <Route path='/education' element={<Physical/>} />
 
             {/* <Route path="/servicesTwo" element={<ServicesTwo />} /> */}
@@ -98,6 +127,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AllContext>
+      </UserContext.Provider>
     </>
   );
 }

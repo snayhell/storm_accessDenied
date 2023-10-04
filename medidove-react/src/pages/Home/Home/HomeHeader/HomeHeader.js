@@ -53,9 +53,7 @@ const HomeHeader = () => {
                                        <li><Link to="/mental">Mental Health Resources</Link></li>
                                     </ul>
                                  </li>
-                                 <li><Link to="/healthCare">Health </Link>
-                                    
-                                 </li>
+                              
                                
                                  <li><Link to="/map">Map </Link>
                                     
@@ -69,7 +67,7 @@ const HomeHeader = () => {
                                  <li><a href="http://localhost:3001/">Yoga</a>
                                    
                                  </li>
-                                 <li><Link to="/profilr">Dashboard</Link>
+                                 <li><Link to="/profile">Dashboard</Link>
                                   
                                  </li>
                                  <li><Link to="/Help">Help Center</Link>
