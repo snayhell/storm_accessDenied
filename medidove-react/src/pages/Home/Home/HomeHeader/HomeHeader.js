@@ -38,29 +38,20 @@ const HomeHeader = () => {
                         </div>
                      </div>
                      <div className="col-xl-9 col-lg-9 col-md-6 col-6">
-                        <div className="header-right f-right">
-                           <div className="header-lang f-right pos-rel d-none d-lg-block">
-                              <div className="lang-icon">
-                                 <img src="img/icon/lang.png" alt=""/>
-                                    <span>EN<i className="fas fa-angle-down"></i></span>
-                              </div>
-                              <ul className="header-lang-list">
-                                 <li><a href="#">USA</a></li>
-                                 <li><a href="#">UK</a></li>
-                                 <li><a href="#">CA</a></li>
-                                 <li><a href="#">AU</a></li>
-                              </ul>
-                           </div>
-                        </div>
+                       
                         <div className="header__menu f-right">
                            <nav id="mobile-menu">
                               <ul>
                                  <li><Link to="/">Home </Link>
                                  
                                  </li>
-                                 <li><Link to="/services">Department </Link>
+                                 <li><Link to="/education">Education </Link>
                                     
                                  </li>
+                                 <li><Link to="/healthCare">Health </Link>
+                                    
+                                 </li>
+                               
                                  <li><Link to="/map">Map </Link>
                                     
                                  </li>
@@ -92,9 +83,23 @@ const HomeHeader = () => {
                                        <li><Link to="/notMatch">404 page</Link></li>
                                     </ul>
                                  </li>
-                                 <li><Link to="/profile">Profile</Link>
+                                 <li><Link to="/profilr">Dashboard</Link>
                                   
                                  </li>
+                                 <li><Link to="/Help">Help Center</Link>
+                                 <ul className="submenu">
+                                       <li><Link to="/shop">Shop Page</Link></li>
+                                       <li><Link to="/shopDetails">Shop Details</Link></li>
+                                       <li><Link to="/shoppingCart">Shopping Cart</Link></li>
+                                       <li><Link to="/checkout">Checkout</Link></li>
+                                       <li><Link to="/wishList">Wishlist</Link></li>
+                                       <li><Link to="/login">Login</Link></li>
+                                       <li><Link to="/register">Register</Link></li>
+                                    </ul>
+                                    </li>
+                                    <li><Link to="/login">Login</Link>
+                                    
+                                    </li>
                               </ul>
                            </nav>
                         </div>
