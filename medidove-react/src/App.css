@@ -4,3 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+#fam{
+  background-image: url("./pages/Home/Home/HomeCta/family.png");
+  background-position: center;
+}

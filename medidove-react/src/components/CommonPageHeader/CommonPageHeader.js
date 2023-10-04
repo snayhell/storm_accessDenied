@@ -10,7 +10,7 @@ const CommonPageHeader = ({title,subtitle}) => {
                   <div className="col-lg-9 col-md-9">
                      <div className="page-title">
                         <p className="small-text pb-15">We are here for your care.</p>
-                        <h1>{title}</h1>
+                        <h1>Dr. Vishwakumar</h1>
                      </div>
                   </div>
                   <div className="col-lg-3 col-md-3 d-flex justify-content-start justify-content-md-end align-items-center">

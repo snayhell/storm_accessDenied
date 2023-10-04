@@ -9,8 +9,8 @@ const HomeSingleFooterBlog = ({image}) => {
                     <Link to="/blogDetails"><img src={`img/blog/feeds-thumb-${image}.jpg`} alt=""/></Link>
                 </div>
                 <div className="blog-feeds-text">
-                    <h5><Link to="/blogDetails">Lorem ipsum dolor sit am et, consectetur.</Link></h5>
-                    <span className="feeds-date">14 Feb 2022</span>
+                    <h5><Link to="/blogDetails">Teen Pregnancy: an increasing Phenomenon.</Link></h5>
+                    <span className="feeds-date">14 Feb 2023</span>
                 </div>
             </div>
         </>

@@ -23,14 +23,12 @@ const HomeFact = () => {
                         <div className="single-satisfied mb-50">
                            <h1>1M+</h1>
                            <h5> <i className="fas fa-user"></i> Satisfied Patients</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              aliqua.</p>
+                           <p>We have catered to thousands of mothers and their children and have recived satisfactory reviews.</p>
                         </div>
                         <div className="single-satisfied mb-50">
                            <h1>100+</h1>
                            <h5><i className="far fa-thumbs-up"></i> World Awards</h5>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              aliqua.</p>
+                           <p>We have recieved awards for our tie up to topmost hospitals.</p>
                         </div>
                      </div>
                   </div>

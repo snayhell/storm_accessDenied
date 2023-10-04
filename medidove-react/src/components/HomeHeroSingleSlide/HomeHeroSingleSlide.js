@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useGlobalContext from '../../hooks/useGlobalContext';
+import dashMom from './dashMom.jpeg';
 
 const HomeHeroSingleSlide = ({ bg_className}) => {
    const videoPopup = useGlobalContext();
    const {setIsOpen} = videoPopup
+   const backgroundImageStyle = {
+      backgroundImage: `url(${dashMom})`,
+      backgroundSize: 'cover',
+      
+   };
    return (
       <>
-         <div className={`single-slider slider-height d-flex align-items-center slider_bg_${bg_className}`}>
+         <div className={`single-slider slider-height d-flex align-items-center slider_bg_${bg_className}` } style={backgroundImageStyle} >
             <div className="container">
                <div className="row">
                   <div className="col-xl-6 col-lg-8 col-md-10">

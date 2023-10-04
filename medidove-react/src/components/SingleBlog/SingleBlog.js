@@ -15,8 +15,8 @@ const SingleBlog = ({image}) => {
                                 <span><Link to="/blogDetails" className="news-tag">Medical,</Link></span>
                                 <span><Link to="/blogDetails" className="news-tag">Medicine</Link></span>
                             </div>
-                            <h3><Link to="/blogDetails">Lorem ipsum dolor sit met, cons ectetur.</Link></h3>
-                            <p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do eiusmod tem incididunt ut labore et dolore.</p>
+                            <h3><Link to="/blogDetails">Children Sociial Groups</Link></h3>
+                            <p>These are social groups for children to increase interactivity.</p>
                         </div>
                     </div>
                 </div>

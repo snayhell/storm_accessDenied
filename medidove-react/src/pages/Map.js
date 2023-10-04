@@ -280,7 +280,7 @@ function Map() {
         flexDirection="column"
         alignItems="center"
         h="90vh"
-        w="90vw"
+        w="100vw"
       >
         <Box position="absolute" left={0} top={0} h="100%" w="100%">
           {/* Google Map Box */}
@@ -386,13 +386,14 @@ function Map() {
             </Box>
 
             <ButtonGroup>
-              <Button colorScheme="pink" type="submit" onClick={calculateRoute}>
+              <Button colorScheme="pink" type="submit" onClick={calculateRoute} style={{backgroundColor: "pink", borderRadius: "10px", padding:"4px", border:"none"}}>
                 Calculate Route
               </Button>
               <IconButton
                 aria-label="center back"
                 icon={<FaTimes />}
                 onClick={clearRoute}
+                style={{backgroundColor: "pink", borderRadius: "10px", padding:"3px", border:"none"}}
               />
             </ButtonGroup>
           </HStack>
@@ -402,11 +403,14 @@ function Map() {
             <IconButton
               aria-label="center back"
               icon={<FaLocationArrow />}
+              style={{backgroundColor: "pink", borderRadius: "10px", padding:"5px", border:"none"}}
               isRound
               onClick={() => {
                 map.panTo(center);
                 map.setZoom(15);
-              }}
+    
+              }
+            }
             />
           </HStack>
         </Box>

@@ -11,7 +11,7 @@ const HomeSIngleService = ({ icon, title, border_class}) => {
                </div>
                <div className="service-content">
                   <h3><Link to="/servicesDetails">{title}</Link></h3>
-                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                  <p>This website is your go to site for prenatal care, post-partum care, and caressing your child with utmost quality.</p>
                   <Link className="service-link" to="/servicesDetails">Read More</Link>
                </div>
             </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import fam from './family.png';
+import '../../../../App.css'
 const HomeCta = () => {
 	return (
 		<>
-			<section className="cta-area pos-rel pt-115 pb-120 cta_bg">
+			<section className="cta-area pos-rel pt-115 pb-120 " id="fam">
 				<div className="container">
 					<div className="row">
 						<div className="col-xl-10 offset-xl-1 col-md-12">

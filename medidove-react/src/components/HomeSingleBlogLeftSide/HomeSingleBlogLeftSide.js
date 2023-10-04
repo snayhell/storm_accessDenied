@@ -14,10 +14,8 @@ const HomeSingleBlogLeftSide = ({image}) => {
                      <span><Link to="/blogDetails" className="news-tag">Medical,</Link></span>
                      <span><Link to="/blogDetails" className="news-tag">Medicine</Link></span>
                   </div>
-                  <h3><Link to="/blogDetails">Lorem ipsum dolor sit amet, cons ectetur adidis dicolo wiran.</Link></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                     magna
-                     aliqua. Ut enim ad minim veniam.</p>
+                  <h3><Link to="/blogDetails">Mental Health for Mothers</Link></h3>
+                  <p>There is a seminar happening to address the issue of Postpartum Depression.</p>
                </div>
             </div>
          </div>

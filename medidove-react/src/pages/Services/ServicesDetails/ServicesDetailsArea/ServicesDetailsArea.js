@@ -70,20 +70,8 @@ const ServicesDetailsArea = () => {
                            </div>
                         </div>
                         <div className="service-details-text mb-30">
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                              unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-                              illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                              voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
-                              nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                              numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                              occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-                              unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                           <p>Maternal and child care is a fundamental aspect of public health, focusing on the well-being of mothers and their offspring. During pregnancy, maternal care ensures the health and safety of both mother and baby through regular check-ups, nutritional support, and monitoring for potential complications. Skilled healthcare professionals play a pivotal role in guiding mothers through childbirth, ensuring a safe and positive experience.</p>
+                           <p>Child care, beginning at birth, encompasses a continuum of services aimed at promoting the healthy development of children. This includes vaccinations, routine health check-ups, and nutritional interventions crucial for growth and well-being. Early childhood is a critical phase, and effective maternal and child care not only safeguards the health of individuals but also lays the foundation for resilient and thriving communities. The integration of maternal and child care services is essential for fostering a holistic approach to healthcare, ensuring the best possible start in life for both mothers and their children.</p>
                         </div>
                         <div className="service-details-feature fix mb-35">
                            <div className="ser-fea-box f-left">
@@ -203,37 +191,37 @@ const ServicesDetailsArea = () => {
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-1.png" alt="" /></div>
-                                    <div className="more-service-title">Body Surgery</div>
+                                    <div className="more-service-title">Doctor's Appointment</div>
                                  </Link>
                               </li>
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-2.png" alt="" /></div>
-                                    <div className="more-service-title">Dental Care</div>
+                                    <div className="more-service-title">Prenatal Care</div>
                                  </Link>
                               </li>
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-3.png" alt="" /></div>
-                                    <div className="more-service-title">Eye Care</div>
+                                    <div className="more-service-title">Postpartum Care</div>
                                  </Link>
                               </li>
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-4.png" alt="" /></div>
-                                    <div className="more-service-title">Blood cancer</div>
+                                    <div className="more-service-title">Child Healthcare</div>
                                  </Link>
                               </li>
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-5.png" alt="" /></div>
-                                    <div className="more-service-title">Neurology Sargery</div>
+                                    <div className="more-service-title">Vaccination Tracking</div>
                                  </Link>
                               </li>
                               <li>
                                  <Link to="/services">
                                     <div className="more-service-icon"><img src="img/services/more-ser-6.png" alt="" /></div>
-                                    <div className="more-service-title">Allergic Issue</div>
+                                    <div className="more-service-title">Home Remedies for minor Ailments </div>
                                  </Link>
                               </li>
                            </ul>

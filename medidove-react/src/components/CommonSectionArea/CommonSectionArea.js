@@ -3,7 +3,7 @@ import React from 'react';
 const CommonSectionArea = ({area_header}) => {
    return (
       <>
-         <section className="about-area pt-120 pb-90">
+         <section className="about-area pt-120 pb-90" style={{display: 'none'}}>
             <div className="container">
                <div className="row">
                   <div className="col-xl-6 col-lg-5">

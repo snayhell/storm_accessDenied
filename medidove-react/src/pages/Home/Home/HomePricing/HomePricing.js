@@ -4,7 +4,7 @@ import HomeSinglePrice from '../../../../components/HomeSinglePrice/HomeSinglePr
 const HomePricing = () => {
    return (
       <>
-         <section className="pricing-area gray-bg pt-115 pb-90">
+         <section className="pricing-area gray-bg pt-115 pb-90" style={{display:"none"}}>
             <div className="container">
                <div className="row">
                   <div className="col-xl-5 col-lg-6 col-md-12">

@@ -15,9 +15,7 @@ const Footer = () => {
                               <Link to="/"><img src="img/logo/footer-logo-3.png" alt="" /></Link>
                            </div>
                            <div className="footer-contact-content mb-25">
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                 incididunt ut labore et dolore magna
-                                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                              <p>We have made this website with the aim of solving everyday problems in a pregnant lady's life and how we aim to easier for them to provide their child with the care of utmost quality.</p>
                            </div>
                            <div className="footer-emailing">
                               <ul>
@@ -35,9 +33,9 @@ const Footer = () => {
                            </div>
                            <div className="footer-menu footer-menu-2">
                               <ul>
-                                 <li><Link to="/servicesDetails">Surgery and Radiology</Link></li>
+                                 <li><Link to="/servicesDetails">Surgery Assist</Link></li>
                                  <li><Link to="/servicesDetails">Departments</Link></li>
-                                 <li><Link to="/servicesDetails">Family Medicine</Link></li>
+                                 <li><Link to="/servicesDetails">Medicine</Link></li>
                                  <li><Link to="/doctors">Our Doctors</Link></li>
                                  <li><Link to="/servicesDetails">Women’s Health</Link></li>
                                  <li><Link to="/blogs">News</Link></li>
@@ -45,7 +43,7 @@ const Footer = () => {
                                  <li><Link to="/shop">Shop</Link></li>
                                  <li><Link to="/servicesDetails">Pediatrics</Link></li>
                                  <li><Link to="/contact">Contact Us</Link></li>
-                                 <li><Link to="/servicesDetails">Dermatology</Link></li>
+                                 <li><Link to="/servicesDetails">Services</Link></li>
                                  <li><Link to="/contact">Book an Appointment</Link></li>
                               </ul>
                            </div>
@@ -71,7 +69,7 @@ const Footer = () => {
                   <div className="row">
                      <div className="col-xl-12">
                         <div className="footer-copyright footer-copyright-3 text-center">
-                           <p>Copyright by@ BasicTheme - 2022</p>
+                           <p></p>
                         </div>
                      </div>
                   </div>
