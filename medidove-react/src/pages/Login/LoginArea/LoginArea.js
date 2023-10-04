@@ -18,7 +18,7 @@ const LoginArea = () => {
    };
    return (
       <>
-         <section className="login-area pt-100 pb-100">
+         <section className="login-area pt-10 pb-100">
             <div className="container">
                <div className="row">
                   <div className="col-lg-8 offset-lg-2">

@@ -6,7 +6,6 @@ import {
   HStack,
   IconButton,
   Input,
-  SkeletonText,
   Text,
 } from "@chakra-ui/react";
 import { FaLocationArrow, FaTimes } from "react-icons/fa";

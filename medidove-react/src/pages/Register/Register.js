@@ -8,7 +8,6 @@ const Register = () => {
     return (
         <>
             <HomeHeader/>
-            <CommonPageHeader title="Register Page" subtitle="Register" />
             <RegisteArea/>
             <Footer/>
         </>

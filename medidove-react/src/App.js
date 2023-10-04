@@ -19,6 +19,7 @@ import DetailsLeftSideBar from './pages/DetailsLeftSideBar/DetailsLeftSideBar';
 import DetailsVideo from './pages/DetailsVideo/DetailsVideo';
 import DoctorDetails from './pages/Doctors/DoctorDetails/DoctorDetails';
 import DoctorsOne from './pages/Doctors/DoctorsOne/DoctorsOne';
+import { useContext,createContext } from 'react';
 
 import Home from './pages/Home/Home/Home';
 
@@ -39,6 +40,7 @@ import './App.css';
 import NotFound from './pages/NotFound/NotFound';
 import Map from './pages/Map';
 import Profile from './pages/Profile';
+import Vaccine from './pages/Vaccine';
 // import Tutorials from './pages/Yoga/pages/Tutorials/Tutorials';
 // import Yoga1 from './pages/Yoga/Yoga1';
 // import Yoga from './pages/Yoga/pages/Yoga/Yoga';
@@ -90,6 +92,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/map" element={<Map />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/vaccine" element={<Vaccine />} />
           </Routes>
         </BrowserRouter>
       </AllContext>
