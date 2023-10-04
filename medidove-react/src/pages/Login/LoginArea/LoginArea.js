@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
+// import useAuth from '../../../hooks/useAuth';
 import { useForm } from "react-hook-form";
 
 const LoginArea = () => {
-   const { loginUser, passwordResetWithEmail, googleSignIn } = useAuth();
+   // const { loginUser, passwordResetWithEmail, googleSignIn } = useAuth();
    const [email,setEmail] = useState('');
+   const [password, setPassword] = useState('');
 
    const { register, handleSubmit, reset } = useForm();
    const onSubmit = data => {
@@ -14,7 +15,7 @@ const LoginArea = () => {
       setEmail(email)
       const password = data.password;
 
-      loginUser(email, password,reset)
+      // loginUser(email, password,reset)
    };
    return (
       <>
@@ -38,7 +39,7 @@ const LoginArea = () => {
                                  <label htmlFor="remember">Remember me!</label>
                               </span>
                               <span className="forgot-login f-right">
-                                 <span onClick={() => passwordResetWithEmail(email)}>Lost your password?</span>
+                                 {/* <span onClick={() => passwordResetWithEmail(email)}>Lost your password?</span> */}
                               </span>
 
                            </div>
@@ -46,9 +47,7 @@ const LoginArea = () => {
                            <div className="or-divide"><span>or</span></div>
                            <Link to="/register"><button className="primary_btn theme-btn w-100">Register Now</button></Link>
                         </form>
-                        <div className="or-divide or-login"><span>or login with </span></div>
-                        <button onClick={() => googleSignIn()} className="login_btn">
-                           <img src="img/icon/google_icon.svg" alt="" /> </button>
+                        
                      </div>
                   </div>
                </div>

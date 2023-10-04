@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import useFirebase from '../hooks/useFirebase';
+
 
 export const AuthContext = createContext();
 
@@ -51,7 +51,7 @@ const AllContext = ({children}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const value = {
-        auth: useFirebase(),
+        
         isOpen,
         setIsOpen,
         stickyMenu,

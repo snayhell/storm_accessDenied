@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import useAuth from "../../../hooks/useAuth";
+// import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import {db} from '../../../components/Firebase/Firebase.config';
+import { collection, addDoc, getDocs} from 'firebase/firestore';
 
 const RegisteArea = () => {
-  const { registerUser, googleSignIn } = useAuth();
+  // const { registerUser, googleSignIn } = useAuth();
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
    const [password,setPassword] = useState("")
@@ -19,9 +21,32 @@ const RegisteArea = () => {
   const [age, setAge] = useState("");
   const [prevMed, setPrevMed] = useState("");
   const { register, handleSubmit, reset } = useForm();
-  
+  const [users, setUsers] = useState([]);
+  const usersRef = collection(db, "health-record");
   const onSubmit = (data) => {
    
+    
+    
+    const createUser = async () => {
+      
+      await addDoc(usersRef, { 
+        name: name, 
+        age: age,
+        BloodPressure: bp,
+        BloodType: bt,
+        
+        DateConception: dateOfConception,
+        DateOfCheckup: dateOfLastCheckup,
+        DueDate: dueDate,
+        EmergencyContact: emergencyPhone,
+        
+        previousMedicalCondition: prevMed,
+        PrevPregnancy: prevPregnancy
+  
+  
+      });
+    };
+    createUser();
    console.log(name,email,password,bp,bt,dateOfConception,dateOfLastCheckup,dueDate,emergencyPhone,prevPregnancy,age,prevMed);
   };
   return (
@@ -221,7 +246,7 @@ const RegisteArea = () => {
                 <div className="or-divide or-login">
                   <span>or login with </span>
                 </div>
-                <button onClick={() => googleSignIn()} className="login_btn">
+                <button onClick={() => ("")} className="login_btn">
                   <img src="img/icon/google_icon.svg" alt="google" />{" "}
                 </button>
               </div>
