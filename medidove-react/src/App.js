@@ -45,6 +45,7 @@ import Vaccine from './pages/Vaccine';
 // import Yoga1 from './pages/Yoga/Yoga1';
 // import Yoga from './pages/Yoga/pages/Yoga/Yoga';
 import Physical from './pages/Education/Physical';
+import Remedy from './pages/Remedy';
 
 function App() {
   return (
@@ -93,6 +94,7 @@ function App() {
             <Route path="/map" element={<Map />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/vaccine" element={<Vaccine />} />
+            <Route path="/remedy" element={<Remedy />} />
           </Routes>
         </BrowserRouter>
       </AllContext>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../components/Shared/Footer";
 import HomeHeader from "./Home/Home/HomeHeader/HomeHeader";
 import { Box, Flex } from "@chakra-ui/react";
@@ -12,7 +12,7 @@ import {
 } from "@react-google-maps/api";
 import { InfoWindow } from "@react-google-maps/api";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 const data = {
   search_metadata: {
     id: "651d47f7f55d77990754e186",
@@ -581,41 +581,144 @@ const data = {
   },
 };
 
-const vaccineData = [
-  {
-    age: "1-2 months",
-    vaccines: [
-      {
-        name: "Diphtheria, tetanus, and pertussis (DTaP)",
-        prevents: ["Diphtheria", "Tetanus", "Pertussis"],
-      },
-      {
-        name: "Haemophilus influenzae type b (Hib)",
-        prevents: ["Haemophilus influenzae type b (Hib) disease"],
-      },
-      {
-        name: "Polio (IPV)",
-        prevents: ["Polio"],
-      },
-      {
-        name: "Pneumococcal conjugate (PCV)",
-        prevents: ["Pneumococcal disease"],
-      },
-      {
-        name: "Rotavirus (RV)",
-        prevents: ["Rotavirus infections"],
-      },
-    ],
-  },
-];
-
 const Vaccine = () => {
+  const [vaccineData, setVaccineData] = useState([
+    {
+      age: "1-2 months",
+      vaccines: [
+        {
+          name: "Diphtheria, tetanus, and pertussis (DTaP)",
+          prevents: ["Diphtheria", "Tetanus", "Pertussis"],
+        },
+        {
+          name: "Haemophilus influenzae type b (Hib)",
+          prevents: ["Haemophilus influenzae type b (Hib) disease"],
+        },
+        {
+          name: "Polio (IPV)",
+          prevents: ["Polio"],
+        },
+        {
+          name: "Pneumococcal conjugate (PCV)",
+          prevents: ["Pneumococcal disease"],
+        },
+        {
+          name: "Rotavirus (RV)",
+          prevents: ["Rotavirus infections"],
+        },
+      ],
+    },
+    {
+      age: "3-4 months",
+      vaccines: [
+        {
+          name: "Diphtheria, tetanus, and pertussis (DTaP)",
+          prevents: ["Diphtheria", "Tetanus", "Pertussis"],
+        },
+        {
+          name: "Haemophilus influenzae type b (Hib)",
+          prevents: ["Haemophilus influenzae type b (Hib) disease"],
+        },
+        {
+          name: "Polio (IPV)",
+          prevents: ["Polio"],
+        },
+        {
+          name: "Pneumococcal conjugate (PCV)",
+          prevents: ["Pneumococcal disease"],
+        },
+        {
+          name: "Rotavirus (RV)",
+          prevents: ["Rotavirus infections"],
+        },
+      ],
+    },
+    {
+      age: "5-6 months",
+      vaccines: [
+        {
+          name: "Diphtheria, tetanus, and pertussis (DTaP)",
+          prevents: ["Diphtheria", "Tetanus", "Pertussis"],
+        },
+        {
+          name: "Haemophilus influenzae type b (Hib)",
+          prevents: ["Haemophilus influenzae type b (Hib) disease"],
+        },
+        {
+          name: "Polio (IPV)",
+          prevents: ["Polio"],
+        },
+        {
+          name: "Pneumococcal conjugate (PCV)",
+          prevents: ["Pneumococcal disease"],
+        },
+        {
+          name: "Influenza (flu)",
+          prevents: ["Influenza"],
+        },
+      ],
+    },
+    {
+      age: "8-9 months",
+      vaccines: [
+        {
+          name: "Measles, mumps, and rubella (MMR)",
+          prevents: ["Measles", "Mumps", "Rubella"],
+        },
+        {
+          name: "Varicella (chickenpox)",
+          prevents: ["Chickenpox"],
+        },
+        {
+          name: "Hepatitis A (HepA)",
+          prevents: ["Hepatitis A"],
+        },
+        {
+          name: "Influenza (flu)",
+          prevents: ["Influenza"],
+        },
+      ],
+    },
+    {
+      age: "1 year",
+      vaccines: [
+        {
+          name: "Measles, mumps, and rubella (MMR)",
+          prevents: ["Measles", "Mumps", "Rubella"],
+        },
+        {
+          name: "Varicella (chickenpox)",
+          prevents: ["Chickenpox"],
+        },
+        {
+          name: "Hepatitis A (HepA)",
+          prevents: ["Hepatitis A"],
+        },
+        {
+          name: "Diphtheria, tetanus, and pertussis (DTaP)",
+          prevents: ["Diphtheria", "Tetanus", "Pertussis"],
+        },
+        {
+          name: "Haemophilus influenzae type b (Hib)",
+          prevents: ["Haemophilus influenzae type b (Hib) disease"],
+        },
+        {
+          name: "Pneumococcal conjugate (PCV)",
+          prevents: ["Pneumococcal disease"],
+        },
+      ],
+    },
+  ]);
   const [center, setCenter] = useState({ lat: 20, lng: 78.2945 });
-  const [open, setOpen] = useState(false);
+  const initialStrikedState = vaccineData[0].vaccines.map(() => false);
+  const [vaccineStriked, setVaccineStriked] = useState(initialStrikedState);
 
-  const handleClick = () => {
-    setOpen(!open);
+  const handleToggleStrikeThrough = (idx) => {
+    const updatedStrikedState = [...vaccineStriked];
+    updatedStrikedState[idx] = !updatedStrikedState[idx];
+    setVaccineStriked(updatedStrikedState);
   };
+
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "AIzaSyAzHTxyzCoLoxWgUbEezEHfd6eUrK9ujSs",
     libraries: ["places"],
@@ -628,6 +731,8 @@ const Vaccine = () => {
   const originRef = useRef();
   const destiantionRef = useRef();
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const [showCompletedButton, setShowCompletedButton] = useState(true);
+  const [timer, setTimer] = useState(null);
   const backgroundColors = [
     "#FFE4C4", // bisque
     "#D8BFD8", // thistle
@@ -642,6 +747,7 @@ const Vaccine = () => {
   useEffect(() => {
     getLocationJs();
   }, []);
+  
 
   const getLocationJs = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -698,6 +804,12 @@ const Vaccine = () => {
     originRef.current.value = "";
     destiantionRef.current.value = "";
   }
+
+  const handleCompleteClick = () => {
+    setVaccineData((prevData) => prevData.slice(1));
+    setVaccineStriked(new Array(vaccineData[1].vaccines.length).fill(false));
+  };
+
   return (
     <>
       <HomeHeader />
@@ -710,29 +822,92 @@ const Vaccine = () => {
       >
         Your Child's Vaccine Tracker
       </h2>
-      <h4
+      <h3
         style={{
           textAlign: "center",
-          paddingTop: "10px",
-          paddingBottom: "10px",
+          paddingBottom: "5px",
         }}
       >
-        Doctors Recommended
-      </h4>
+        Doctors Recommended Vaccines
+      </h3>
       <div
-        style={{ display: "flex", flexWrap: "wrap", padding: "30px", gap: 30 }}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          padding: "30px",
+          gap: 30,
+          justifyContent: "center",
+        }}
       >
         {vaccineData.map((vaccine, id) => (
           <div
+            key={id}
+            id={`vaccine-${id}`}
             style={{
-              width: "400px",
-              height: "300px",
-              backgroundColor: "blue",
+              width: "420px",
+              height: "420px",
+              backgroundColor: backgroundColors[id],
               borderRadius: "20px",
+              padding: 20,
             }}
-          ></div>
+          >
+            <div style={{ fontSize: 25, color: "black", paddingBottom: 20 }}>
+              Age : {vaccine.age}
+            </div>
+            {vaccine.vaccines.map((v, idx) => (
+              <div
+                key={idx}
+                id={`vaccine-vaccine-${idx}`}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  marginBottom: "10px",
+                }}
+                onClick={() => handleToggleStrikeThrough(idx, id)}
+              >
+                <div
+                  style={{
+                    textDecoration:
+                      vaccineStriked[idx] && id === 0 ? "line-through" : "none",
+                    fontWeight: vaccineStriked[idx] ? "bold" : "bold",
+                    color: vaccineStriked[idx] && id === 0 && "gray",
+                    fontSize: 17,
+                  }}
+                >
+                  {v.name}
+                </div>
+                <div>
+                  <span style={{ fontWeight: "bold" }}>Prevents:</span>
+                  {v.prevents.map((p, id) => (
+                    <span key={id}>{p}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+            {showCompletedButton && id === 0 && (
+              <>
+                <button
+                  style={{
+                    border: "none",
+                    padding: "10px",
+                    width: "100px",
+                    height: "40px",
+                    borderRadius: "10px",
+                    color: "white",
+                    backgroundColor: "black",
+                    alignSelf: "center",
+                  }}
+                  onClick={handleCompleteClick}
+                >
+                  Completed
+                </button>
+              </>
+            )}
+          </div>
         ))}
       </div>
+
       <h2
         style={{
           textAlign: "center",
