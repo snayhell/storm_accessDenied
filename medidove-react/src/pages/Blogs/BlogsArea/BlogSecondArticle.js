@@ -15,11 +15,6 @@ const BlogSecondArticle = () => {
                     <button onClick={() => setIsOpen(true)} className="popup-video video-btn border-0"><i className="fas fa-play"></i></button>
                 </div>
                 <div className="postbox__text p-50">
-                    <div className="post-meta mb-15">
-                        <span><i className="far fa-calendar-check"></i> September 15, 2021 </span>
-                        <span><Link to="/blogDetails"><i className="far fa-user"></i> Diboli B. Joly</Link></span>
-                        <span><Link to="/blogDetails"><i className="far fa-comments"></i> 23 Comments</Link></span>
-                    </div>
                     <h3 className="blog-title">
                         <Link to="/blogDetails">To help ease the process, we identified 75 of our favorite medical blogs.</Link>
                     </h3>

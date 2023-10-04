@@ -42,7 +42,7 @@ import Profile from './pages/Profile';
 // import Tutorials from './pages/Yoga/pages/Tutorials/Tutorials';
 // import Yoga1 from './pages/Yoga/Yoga1';
 // import Yoga from './pages/Yoga/pages/Yoga/Yoga';
-
+import Physical from './pages/Education/Physical';
 
 function App() {
   return (
@@ -54,7 +54,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<ServicesOne />} />
-            {/* <Route path='/tutorials' element={<Tutorials />} /> */}
+            <Route path='/education' element={<Physical/>} />
+
             {/* <Route path="/servicesTwo" element={<ServicesTwo />} /> */}
             <Route path="/servicesDetails" element={<ServicesDetails />} />
             <Route path="/doctors" element={<DoctorsOne />} />
