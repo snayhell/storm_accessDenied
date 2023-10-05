@@ -1,14 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
-
-const Community = () => {
+import Roomname from '../Firebase/Roomname'
+export default function Community() {
   return (
-    <View>
-      <Text>Community</Text>
-    </View>
+    <ScrollView>
+      <Roomname/>
+    </ScrollView>
   )
 }
-
-export default Community
-
-const styles = StyleSheet.create({})
