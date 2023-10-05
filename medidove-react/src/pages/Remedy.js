@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { HfInference } from '@huggingface/inference';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import axios from 'axios';
-const SpeechToQnAComponent = () => {
+import Ai from './ezgif-5-5adf764279.gif'
+import ai from './ai.png'
+import HomeHeader from "./Home/Home/HomeHeader/HomeHeader";
+
+const Remedy = () => {
   const [inputText, setInputText] = useState('');
   const [audioDataUrl, setAudioDataUrl] = useState(null);
   const [question, setQuestion] = useState('');
@@ -20,10 +24,10 @@ const SpeechToQnAComponent = () => {
     data: {
       providers: "openai",
       text: toggle
-        ? `i am a 4 month women having ${question} give me some home remedies in desi indian solutions, only state the solution in less than 2 lines`
-        : `i am a women having a 2 month baby suffering from ${question} give me some home remedies in desi indian solutions, only state the solution in less than 2 lines`,
+        ? `i am a 4 month women having ${question} give home remedies in desi indian solutions in lines , only state the solution in 15-20 words,give advice like a doctor,DO NOT GIVE IT IN POINTS`
+        : `i am a women having a 2 month baby suffering from ${question} give me some home remedies in desi indian solutions, only state the solution in 15-20 words give advice like a doctor`,
       temperature: 0.3,
-      max_tokens: 250,
+      max_tokens: 50,
     },
   };
 
@@ -37,6 +41,7 @@ const SpeechToQnAComponent = () => {
   useEffect(() => {
     if (transcript) {
       setInputText(transcript);
+      setQuestion(transcript)
     }
   }, [transcript]);
   useEffect(() => {
@@ -101,11 +106,12 @@ const SpeechToQnAComponent = () => {
   }
 
 
-  return (
-    <div>
-      <h1>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
+  return (<>
+    <HomeHeader/>
+    <div style={{marginTop:"100px"}}>
+      <h1 style={{display:"none"}}>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
       <div >
-        <button onClick={handleStartMicrophoneClick}>Start Microphone</button>
+        <button onClick={handleStartMicrophoneClick} style={{position:"absolute" ,backgroundColor:"red",borderRadius:"10px",fontSize:"25px",padding:"20px",color:"white"}}>Start Microphone</button>
         <button style={{display:"none"}}onClick={SpeechRecognition.stopListening}>Stop Microphone</button>
         <button style={{display:"none"}}onClick={resetTranscript}>Reset Transcript</button>
       </div>
@@ -126,7 +132,7 @@ const SpeechToQnAComponent = () => {
       <button style={{display:"none"}}onClick={handleResetAudio}>Reset Audio</button>
 
       {audioDataUrl && (
-        <div>
+        <div style={{display:"none"}}>
           <h2>Audio Output:</h2>
           <audio controls autoPlay>
             <source src={audioDataUrl} type="audio/flac" />
@@ -134,7 +140,7 @@ const SpeechToQnAComponent = () => {
           </audio>
         </div>
       )}
-
+    
       <div style={{display:"none"}}>
         <label >Question:</label>
         <input
@@ -144,13 +150,19 @@ const SpeechToQnAComponent = () => {
           readOnly={listening}
         />
       </div>
-      <button style={{display:""}}onClick={handleQuestionSubmit}>Submit Question</button>
-      <div style={{display:""}}>
+      <button style={{display:"none"}}onClick={handleQuestionSubmit}>Submit Question</button>
+      <div style={{display:"none"}}>
         <h2>Answer:</h2>
         <p>{answer}</p>
       </div>
+     
+  <img src={Ai} alt="" style={{ width: "100vw", height: "100vh" }} />
+
+
+      {answer?<div style={{position:"absolute",top:"10",bottom:"0",left:"0",right:"0",fontSize:"40px"}} >Nuskha is thinking.....</div>:<></>}
     </div>
+    </>
   );
 };
 
-export default SpeechToQnAComponent;
+export default Remedy;
