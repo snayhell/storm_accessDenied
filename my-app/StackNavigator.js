@@ -124,11 +124,11 @@ const StackNavigator = () => {
         headerShown: false,
         tabBarIcon: ({ focused }) => (
           <Image
-            source={require("./assets/favicon.png")}
+            source={require("./assets/sos-warning.png")}
             resizeMode="contain"
             style={{
-              width: 27,
-              height: 27,
+              width: 40,
+              height: 40,
               tintColor: focused ? "white" : "white",
             }}
           />
