@@ -108,14 +108,15 @@ const Remedy = () => {
 
   return (
     <div>
-      <h1>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
+      <HomeHeader />
+      <h1 style={{textAlign:"center"}}>Nuskha - your Home Remedy Partner</h1>
       <div >
-        <button onClick={handleStartMicrophoneClick}>Start Microphone</button>
+        <button onClick={handleStartMicrophoneClick} style={{marginLeft:"160px", padding:"20px", border:"none", backgroundColor:"lightpink", borderRadius:"15px", marginTop:"50px"}}>Start Microphone</button>
         <button style={{display:"none"}}onClick={SpeechRecognition.stopListening}>Stop Microphone</button>
         <button style={{display:"none"}}onClick={resetTranscript}>Reset Transcript</button>
       </div>
       <div>
-        <p>Microphone: {listening ? 'on' : 'off'}</p>
+        <p style={{marginLeft:"180px", marginTop:"20px"}}>Microphone: {listening ? 'on' : 'off'}</p>
         <p style={{display:"none"}}>Transcript: {transcript}</p>
       </div>
       <div style={{display:"none"}}>
@@ -154,13 +155,13 @@ const Remedy = () => {
         <h2>Answer:</h2>
         <p>{answer}</p>
       </div>
-     
-  <img src={Ai} alt="" style={{ width: "100vw", height: "100vh" }} />
+    
+  <img src={Ai} alt="" style={{ width: "50vw", height: "50vh", marginLeft: "700px", marginTop:"-10px"}} />
 
 
       {answer?<div style={{position:"absolute",top:"10",bottom:"0",left:"0",right:"0",fontSize:"40px"}} >Nuskha is thinking.....</div>:<></>}
     </div>
-    </>
+    
   );
 };
 
