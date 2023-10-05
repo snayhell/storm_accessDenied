@@ -106,12 +106,11 @@ const Remedy = () => {
   }
 
 
-  return (<>
-    <HomeHeader/>
-    <div style={{marginTop:"100px"}}>
-      <h1 style={{display:"none"}}>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
+  return (
+    <div>
+      <h1>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
       <div >
-        <button onClick={handleStartMicrophoneClick} style={{position:"absolute" ,backgroundColor:"red",borderRadius:"10px",fontSize:"25px",padding:"20px",color:"white"}}>Start Microphone</button>
+        <button onClick={handleStartMicrophoneClick}>Start Microphone</button>
         <button style={{display:"none"}}onClick={SpeechRecognition.stopListening}>Stop Microphone</button>
         <button style={{display:"none"}}onClick={resetTranscript}>Reset Transcript</button>
       </div>

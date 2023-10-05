@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View,Image,TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sos from "./Screens/Sos";
@@ -33,185 +33,187 @@ const StackNavigator = () => {
     </TouchableOpacity>
   );
   const BottomTabs = () => {
-    return <Tab.Navigator
-    screenOptions={{
-      tabBarShowLabel: false,
-      tabBarStyle: {
-        elevation: 0,
-        backgroundColor: "white",
-        borderRadius: 15,
-        height: 90,
-      },
-    }}
-  >
-    <Tab.Screen
-      name="Dashboard"
-      component={Dashboard}
-      options={{
-        tabBarLabel: "Dashboard",
-        headerShown: false,
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              top: 10,
-            }}
-          >
-            <Image
-              source={require("./assets/favicon.png")}
-              resizeMode="contain"
-              style={{
-                width: 27,
-                height: 27,
-                tintColor: focused ? "#e32f45" : "#748c94",
-              }}
-            />
-            <Text
-              style={{
-                color: focused ? "#e32f45" : "#748c94",
-                fontSize: 13,
-                paddingTop: 7,
-              }}
-            >
-              Dashboard
-            </Text>
-          </View>
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Tracker"
-      component={Tracker}
-      options={{
-        tabBarLabel: "Tracker",
-        headerShown: false,
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              top: 10,
-            }}
-          >
-            <Image
-              source={require("./assets/favicon.png")}
-              resizeMode="contain"
-              style={{
-                width: 27,
-                height: 27,
-                tintColor: focused ? "#e32f45" : "#748c94",
-              }}
-            />
-            <Text
-              style={{
-                color: focused ? "#e32f45" : "#748c94",
-                fontSize: 13,
-                paddingTop: 7,
-              }}
-            >
-              Tracker
-            </Text>
-          </View>
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Education"
-      component={Sos}
-      options={{
-        tabBarLabel: "Education",
-        headerShown: false,
-        tabBarIcon: ({ focused }) => (
-          <Image
-            source={require("./assets/sos-warning.png")}
-            resizeMode="contain"
-            style={{
-              width: 40,
-              height: 40,
-              tintColor: focused ? "white" : "white",
-            }}
-          />
-        ),
-        tabBarButton: (props) => (
-          // Return the CustomTabBarButton component
-          <CustomTabBarButton {...props} />
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Community"
-      component={Community}
-      options={{
-        tabBarLabel: "Community",
-        headerShown: false,
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              top: 10,
-            }}
-          >
-            <Image
-              source={require("./assets/favicon.png")}
-              resizeMode="contain"
-              style={{
-                width: 27,
-                height: 27,
-                tintColor: focused ? "#e32f45" : "#748c94",
-              }}
-            />
-            <Text
-              style={{
-                color: focused ? "#e32f45" : "#748c94",
-                fontSize: 13,
-                paddingTop: 7,
-              }}
-            >
-              Community
-            </Text>
-          </View>
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Nutrients"
-      component={Nutrients}
-      options={{
-        tabBarLabel: "Nutrients",
-        headerShown: false,
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: "center",
-              justifyContent: "center",
-              top: 10,
-            }}
-          >
-            <Image
-              source={require("./assets/favicon.png")}
-              resizeMode="contain"
-              style={{
-                width: 27,
-                height: 27,
-                tintColor: focused ? "#e32f45" : "#748c94",
-              }}
-            />
-            <Text
-              style={{
-                color: focused ? "#e32f45" : "#748c94",
-                fontSize: 13,
-                paddingTop: 7,
-              }}
-            >
-              Expenses
-            </Text>
-          </View>
-        ),
-      }}
-    />
-  </Tab.Navigator>;
+    return (
+      <Tab.Navigator
+        screenOptions={{
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            elevation: 0,
+            backgroundColor: "white",
+            borderRadius: 15,
+            height: 90,
+          },
+        }}
+      >
+        <Tab.Screen
+          name="Schemes"
+          component={Dashboard}
+          options={{
+            tabBarLabel: "Schemes",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 10,
+                }}
+              >
+                <Image
+                  source={require("./assets/paper_2541979.png")}
+                  resizeMode="contain"
+                  style={{
+                    width: 27,
+                    height: 27,
+                    tintColor: focused ? "#e32f45" : "#748c94",
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? "#e32f45" : "#748c94",
+                    fontSize: 13,
+                    paddingTop: 7,
+                  }}
+                >
+                  Schemes
+                </Text>
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Tracker"
+          component={Tracker}
+          options={{
+            tabBarLabel: "Tracker",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 10,
+                }}
+              >
+                <Image
+                  source={require("./assets/gps_5287771.png")}
+                  resizeMode="contain"
+                  style={{
+                    width: 27,
+                    height: 27,
+                    tintColor: focused ? "#e32f45" : "#748c94",
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? "#e32f45" : "#748c94",
+                    fontSize: 13,
+                    paddingTop: 7,
+                  }}
+                >
+                  Tracker
+                </Text>
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Education"
+          component={Sos}
+          options={{
+            tabBarLabel: "Education",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <Image
+                source={require("./assets/sos-warning.png")}
+                resizeMode="contain"
+                style={{
+                  width: 40,
+                  height: 40,
+                  tintColor: focused ? "white" : "white",
+                }}
+              />
+            ),
+            tabBarButton: (props) => (
+              // Return the CustomTabBarButton component
+              <CustomTabBarButton {...props} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Community"
+          component={Community}
+          options={{
+            tabBarLabel: "Community",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 10,
+                }}
+              >
+                <Image
+                  source={require("./assets/people_1769041.png")}
+                  resizeMode="contain"
+                  style={{
+                    width: 27,
+                    height: 27,
+                    tintColor: focused ? "#e32f45" : "#748c94",
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? "#e32f45" : "#748c94",
+                    fontSize: 13,
+                    paddingTop: 7,
+                  }}
+                >
+                  Community
+                </Text>
+              </View>
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Nutrients"
+          component={Nutrients}
+          options={{
+            tabBarLabel: "Nutrients",
+            headerShown: false,
+            tabBarIcon: ({ focused }) => (
+              <View
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  top: 10,
+                }}
+              >
+                <Image
+                  source={require("./assets/expenses_5501384.png")}
+                  resizeMode="contain"
+                  style={{
+                    width: 27,
+                    height: 27,
+                    tintColor: focused ? "#e32f45" : "#748c94",
+                  }}
+                />
+                <Text
+                  style={{
+                    color: focused ? "#e32f45" : "#748c94",
+                    fontSize: 13,
+                    paddingTop: 7,
+                  }}
+                >
+                  Expenses
+                </Text>
+              </View>
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    );
   };
   return (
     <NavigationContainer>

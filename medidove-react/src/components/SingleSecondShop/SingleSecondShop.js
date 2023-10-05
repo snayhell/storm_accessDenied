@@ -7,7 +7,7 @@ const SingleSecondShop = ({image}) => {
          <div className="col-lg-4 col-md-6">
             <div className="product mb-30">
                <div className="product__img">
-                  <Link to="/shopDetails"><img src={`img/shop/img${image}.jpg`} alt=""/></Link>
+                  <Link to="/shopDetails"><img src={`img/shop/img${image}.jpg`} alt="" style={{width:"760", height:"700"}}/></Link>
                </div>
             </div>
 
@@ -22,12 +22,7 @@ const SingleSecondShop = ({image}) => {
                      <span className="old-price">$120.00</span>
                   </div>
                </div>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna
-                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                  ut
-                  aliquip ex ea commodo consequat.
-                  Duis aute irure dolor in reprehenderit in voluptate.</p>
+               <p>You can buy customised merchandise for yourself and your child and get the desired outfit.</p>
                <div className="product-action-list">
                   <Link className="primary_btn btn-theme" to="/shoppingCart">add to cart</Link>
                   <a className="action-btn" href="#"><i className="fas fa-heart"></i></a>
