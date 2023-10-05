@@ -408,7 +408,7 @@ function Map() {
               onClick={() => {
                 map.panTo(center);
                 map.setZoom(15);
-    
+                
               }
             }
             />

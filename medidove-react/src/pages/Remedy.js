@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { HfInference } from '@huggingface/inference';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import axios from 'axios';
+import HomeHeader from "./Home/Home/HomeHeader/HomeHeader";
+
 const SpeechToQnAComponent = () => {
   const [inputText, setInputText] = useState('');
   const [audioDataUrl, setAudioDataUrl] = useState(null);
@@ -102,10 +104,12 @@ const SpeechToQnAComponent = () => {
 
 
   return (
+    
     <div>
-      <h1>Speech-to-Text, Text-to-Speech, and Question Answering</h1>
+      <HomeHeader />
+      <h1 style={{textAlign:"center", width:"80%", margin: "20px", marginLeft:"100px"}}>Nuskhe - A Home Remedy AI for your Maternal Needs</h1>
       <div >
-        <button onClick={handleStartMicrophoneClick}>Start Microphone</button>
+        <button onClick={handleStartMicrophoneClick} style={{margin:"10px"}}>Start Microphone</button>
         <button style={{display:"none"}}onClick={SpeechRecognition.stopListening}>Stop Microphone</button>
         <button style={{display:"none"}}onClick={resetTranscript}>Reset Transcript</button>
       </div>
