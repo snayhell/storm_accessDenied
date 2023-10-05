@@ -6,6 +6,7 @@ import StackNavigator from './StackNavigator';
 import { createContext,useContext, useState,useEffect } from 'react';
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
+import { ModalPortal } from "react-native-modals";
 
 
 const firebaseConfig = {
@@ -47,7 +48,9 @@ export default function App() {
   const[user,setUser] = useState();
   return (
     <UserContext.Provider value={{user,setUser}}>
-    <StackNavigator></StackNavigator>
+    <StackNavigator/>
+    <ModalPortal />
+
     </UserContext.Provider>
   );
 }
