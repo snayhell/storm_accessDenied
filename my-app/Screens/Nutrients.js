@@ -1,45 +1,45 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, ScrollView } from "react-native";
 import * as Progress from "react-native-progress";
-import { BarChart } from 'react-native-chart-kit';
+import { BarChart } from "react-native-chart-kit";
 
 const Nutrients = () => {
   const dataNutrition = {
-    labels: ["15 months", "3 years", "Tax Saver(5 years)", ""],
+    labels: ["2-oct", "3-oct", "4-oct", "5-oct"],
     datasets: [
       {
-        data: [7.1, 7, 7, 6]
-      }
-    ]
+        data: [7.1, 7, 7, 6],
+      },
+    ],
   };
 
   const dataSleep = {
-    labels: ["Category 1", "Category 2", "Category 3", "Category 4"],
+    labels: ["2-oct", "3-oct", "4-oct", "5-oct"],
     datasets: [
       {
-        data: [3, 4, 2, 5]
-      }
-    ]
+        data: [3, 4, 2, 5],
+      },
+    ],
   };
 
   const screenWidth = 350;
   const chartConfig = {
-    backgroundGradientFrom: '#fff',
-    backgroundGradientTo: '#fff',
+    backgroundGradientFrom: "#fff",
+    backgroundGradientTo: "#fff",
     decimalPlaces: 1,
     color: (opacity = 1) => `rgba(30, 144, 255, ${opacity})`,
     style: {
       borderRadius: 16,
     },
-    yAxisLabel: '₹',
-    yAxisSuffix: '', 
-    min: 0, 
-    max: 3, 
-    stepSize: 3, 
+    yAxisLabel: "₹",
+    yAxisSuffix: "",
+    min: 0,
+    max: 3,
+    stepSize: 3,
   };
 
   return (
-    <View>
+    <ScrollView>
       <Pressable
         style={{
           display: "flex",
@@ -92,7 +92,13 @@ const Nutrients = () => {
             <Text style={{ fontFamily: "Poppins", fontWeight: "bold" }}>
               Left to Spend
             </Text>
-            <Text style={{ fontFamily: "Poppins", marginLeft: 60, fontWeight: "bold" }}>
+            <Text
+              style={{
+                fontFamily: "Poppins",
+                marginLeft: 60,
+                fontWeight: "bold",
+              }}
+            >
               Monthly Balance
             </Text>
           </Pressable>
@@ -106,7 +112,7 @@ const Nutrients = () => {
               animationType="spring"
               unfilledColor="white"
               color="red"
-              progress={0.3} 
+              progress={0.3}
               width={255}
               height={13}
               borderRadius={20}
@@ -124,7 +130,7 @@ const Nutrients = () => {
               animationType="spring"
               unfilledColor="white"
               color="blue"
-              progress={0.3} 
+              progress={0.3}
               width={255}
               height={13}
               borderRadius={20}
@@ -142,7 +148,7 @@ const Nutrients = () => {
               animationType="spring"
               unfilledColor="white"
               color="green"
-              progress={0.3} 
+              progress={0.3}
               width={255}
               height={13}
               borderRadius={20}
@@ -150,37 +156,38 @@ const Nutrients = () => {
               style={{ marginTop: 5 }}
             />
           </View>
-          </Pressable>
-          {/* First BarChart */}
-          <BarChart
-            style={{}}
-            data={dataNutrition}
-            width={screenWidth}
-            height={370}
-            chartConfig={chartConfig}
-            verticalLabelRotation={30}
-            yAxisLabel=''
-            yAxisSuffix='%' 
-            min={0} 
-            max={3} 
-          />
-
-          {/* Second BarChart */}
-          <BarChart
-            style={{}}
-            data={dataSleep} 
-            width={screenWidth}
-            height={370}
-            chartConfig={chartConfig}
-            verticalLabelRotation={30}
-            yAxisLabel=''
-            yAxisSuffix='%' 
-            min={0} 
-            max={5} 
-          />
         </Pressable>
-      
-    </View>
+        {/* First BarChart */}
+        <Text>Past 5 days Sleep Cycle </Text>
+        <BarChart
+          style={{ paddingBottom: 30 }}
+          data={dataNutrition}
+          width={screenWidth}
+          height={370}
+          chartConfig={chartConfig}
+          verticalLabelRotation={30}
+          yAxisLabel=""
+          yAxisSuffix="%"
+          min={0}
+          max={3}
+        />
+
+        {/* Second BarChart */}
+        <Text>Past 5 days Nutrients intake Cycle </Text>
+        <BarChart
+          style={{}}
+          data={dataSleep}
+          width={screenWidth}
+          height={370}
+          chartConfig={chartConfig}
+          verticalLabelRotation={30}
+          yAxisLabel=""
+          yAxisSuffix="%"
+          min={0}
+          max={5}
+        />
+      </Pressable>
+    </ScrollView>
   );
 };
 
